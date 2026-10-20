@@ -6,6 +6,8 @@ Thirteen detections for a freight forwarder's estate, written as Sigma 2.0 rules
 
 The company in the data, Harbourline Forwarding, is fictional. All test records are synthetic (see [Test data](#test-data)).
 
+Run the same pack in the browser on a 7-day sample log stream, with precision, time to detect, containment plans and telemetry blind spots: [pwnsy Detection Pipeline Lab](https://pwnsy.com/tools/detect/pipeline-lab/).
+
 ## Detections
 
 | ID | Detection | ATT&CK v19.2 | Log source | Severity | Cases |
