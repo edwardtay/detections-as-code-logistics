@@ -1,0 +1,205 @@
+{
+  "detection": "FD-007",
+  "cases": [
+    {
+      "name": "exec at 02:14 Saturday, no change or incident",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-17T02:14:00.000Z",
+          "source": "k8s",
+          "record": {
+            "kind": "Event",
+            "apiVersion": "audit.k8s.io/v1",
+            "level": "Metadata",
+            "auditID": "a-b1e19f21",
+            "stage": "ResponseComplete",
+            "requestURI": "/api/v1/namespaces/prod-booking/pods/booking-api-6d8f7c-x2kq/exec",
+            "verb": "create",
+            "user": {
+              "username": "k.bakker@harbourline.example",
+              "groups": [
+                "system:authenticated"
+              ]
+            },
+            "sourceIPs": [
+              "192.0.2.20"
+            ],
+            "userAgent": "kubectl/v1.33.2 (linux/amd64) kubernetes/a1b2c3d",
+            "objectRef": {
+              "resource": "pods",
+              "namespace": "prod-booking",
+              "name": "booking-api-6d8f7c-x2kq",
+              "apiVersion": "v1",
+              "subresource": "exec"
+            },
+            "responseStatus": {
+              "code": 101
+            },
+            "requestReceivedTimestamp": "2026-10-17T02:14:00.000Z",
+            "stageTimestamp": "2026-10-17T02:14:00.040Z",
+            "annotations": {
+              "authorization.k8s.io/decision": "allow"
+            },
+            "enrichment": {
+              "subject_user": "k.bakker@harbourline.example",
+              "change_window": "none",
+              "oncall_incident": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "exec by on-call engineer during PD-2291",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-15T03:41:00.000Z",
+          "source": "k8s",
+          "record": {
+            "kind": "Event",
+            "apiVersion": "audit.k8s.io/v1",
+            "level": "Metadata",
+            "auditID": "a-472c2b09",
+            "stage": "ResponseComplete",
+            "requestURI": "/api/v1/namespaces/prod-payments/pods/booking-api-6d8f7c-x2kq/exec",
+            "verb": "create",
+            "user": {
+              "username": "i.hoekstra@harbourline.example",
+              "groups": [
+                "system:authenticated"
+              ]
+            },
+            "sourceIPs": [
+              "192.0.2.20"
+            ],
+            "userAgent": "kubectl/v1.33.2 (linux/amd64) kubernetes/a1b2c3d",
+            "objectRef": {
+              "resource": "pods",
+              "namespace": "prod-payments",
+              "name": "booking-api-6d8f7c-x2kq",
+              "apiVersion": "v1",
+              "subresource": "exec"
+            },
+            "responseStatus": {
+              "code": 101
+            },
+            "requestReceivedTimestamp": "2026-10-15T03:41:00.000Z",
+            "stageTimestamp": "2026-10-15T03:41:00.040Z",
+            "annotations": {
+              "authorization.k8s.io/decision": "allow"
+            },
+            "enrichment": {
+              "subject_user": "i.hoekstra@harbourline.example",
+              "change_window": "none",
+              "oncall_incident": "PD-2291"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "exec during CHG-3318",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-13T12:20:00.000Z",
+          "source": "k8s",
+          "record": {
+            "kind": "Event",
+            "apiVersion": "audit.k8s.io/v1",
+            "level": "Metadata",
+            "auditID": "a-d9f5142d",
+            "stage": "ResponseComplete",
+            "requestURI": "/api/v1/namespaces/prod-booking/pods/booking-api-6d8f7c-x2kq/exec",
+            "verb": "create",
+            "user": {
+              "username": "t.visser@harbourline.example",
+              "groups": [
+                "system:authenticated"
+              ]
+            },
+            "sourceIPs": [
+              "192.0.2.20"
+            ],
+            "userAgent": "kubectl/v1.33.2 (linux/amd64) kubernetes/a1b2c3d",
+            "objectRef": {
+              "resource": "pods",
+              "namespace": "prod-booking",
+              "name": "booking-api-6d8f7c-x2kq",
+              "apiVersion": "v1",
+              "subresource": "exec"
+            },
+            "responseStatus": {
+              "code": 101
+            },
+            "requestReceivedTimestamp": "2026-10-13T12:20:00.000Z",
+            "stageTimestamp": "2026-10-13T12:20:00.040Z",
+            "annotations": {
+              "authorization.k8s.io/decision": "allow"
+            },
+            "enrichment": {
+              "subject_user": "t.visser@harbourline.example",
+              "change_window": "CHG-3318",
+              "oncall_incident": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "exec in staging",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t3-0",
+          "ts": "2026-10-17T02:14:00.000Z",
+          "source": "k8s",
+          "record": {
+            "kind": "Event",
+            "apiVersion": "audit.k8s.io/v1",
+            "level": "Metadata",
+            "auditID": "a-b1e19f21",
+            "stage": "ResponseComplete",
+            "requestURI": "/api/v1/namespaces/staging-booking/pods/booking-api-6d8f7c-x2kq/exec",
+            "verb": "create",
+            "user": {
+              "username": "k.bakker@harbourline.example",
+              "groups": [
+                "system:authenticated"
+              ]
+            },
+            "sourceIPs": [
+              "192.0.2.20"
+            ],
+            "userAgent": "kubectl/v1.33.2 (linux/amd64) kubernetes/a1b2c3d",
+            "objectRef": {
+              "resource": "pods",
+              "namespace": "staging-booking",
+              "name": "booking-api-6d8f7c-x2kq",
+              "apiVersion": "v1",
+              "subresource": "exec"
+            },
+            "responseStatus": {
+              "code": 101
+            },
+            "requestReceivedTimestamp": "2026-10-17T02:14:00.000Z",
+            "stageTimestamp": "2026-10-17T02:14:00.040Z",
+            "annotations": {
+              "authorization.k8s.io/decision": "allow"
+            },
+            "enrichment": {
+              "subject_user": "k.bakker@harbourline.example",
+              "change_window": "none",
+              "oncall_incident": "none"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

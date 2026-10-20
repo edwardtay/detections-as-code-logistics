@@ -1,0 +1,13 @@
+{
+  "name": "detections-as-code-logistics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sigma detections with positive and negative test cases for a fictional freight forwarder's identity, cloud, endpoint and application logs.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node scripts/test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

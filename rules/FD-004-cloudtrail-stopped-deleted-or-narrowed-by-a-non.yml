@@ -1,0 +1,31 @@
+# FD-004: CloudTrail stopped, deleted or narrowed by a non-IaC principal
+# ATT&CK T1685.002 | source: AWS CloudTrail | severity: high | owner: cloud-detections | schedule: every 10 min
+title: CloudTrail logging stopped, deleted or changed outside the IaC role
+id: 5be07e31-c735-5254-b043-f05d9533f288
+status: test
+description: >
+  Fires on StopLogging, DeleteTrail, UpdateTrail and PutEventSelectors unless the caller is the
+  Terraform deploy role. ATT&CK v19.2 moved cloud log tampering from T1562.008 to T1685.002.
+author: Edward Tay
+date: 2026-10-20
+references:
+  - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html
+tags:
+  - attack.t1685.002
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: cloudtrail.amazonaws.com
+    eventName:
+      - StopLogging
+      - DeleteTrail
+      - UpdateTrail
+      - PutEventSelectors
+  filter_iac:
+    userIdentity.sessionContext.sessionIssuer.userName: terraform-deployer
+  condition: selection and not filter_iac
+falsepositives:
+  - Trail changes made by hand during an approved change
+level: high

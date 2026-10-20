@@ -1,0 +1,809 @@
+{
+  "detection": "FD-012",
+  "cases": [
+    {
+      "name": "new ASN, then carrier and remit-to edit",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-14T09:58:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-7be3339e-1386",
+            "published": "2026-10-14T09:58:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00uc9625cf1x1",
+              "type": "User",
+              "alternateId": "j.devries@harbourline.example",
+              "displayName": "Jan de Vries",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "203.0.113.140",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "United States",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d72e32ac"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64511,
+              "asOrg": "Residential proxy network",
+              "isp": "Residential proxy network",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqe3395429",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-574c7cf8",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txcb8eeea9",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "203.0.113.140",
+                  "geographicalContext": {
+                    "country": "United States"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "asn_new_for_user": true,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t0-1",
+          "ts": "2026-10-14T10:15:00.000Z",
+          "source": "portal",
+          "record": {
+            "time": 1791972900000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "customer-portal",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "portal-f8640d3e",
+              "event_code": "api.request",
+              "correlation_uid": "req-fe8e09"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "shipments.update",
+              "request": {
+                "uid": "req-251459b"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1001",
+                "name": "j.devries@harbourline.example"
+              },
+              "session": {
+                "uid": "s-e68278",
+                "is_mfa": true
+              },
+              "app_uid": "portal-web"
+            },
+            "src_endpoint": {
+              "ip": "203.0.113.140",
+              "location": {
+                "country": "US"
+              }
+            },
+            "resources": [
+              {
+                "uid": "SHP-88412",
+                "type": "record"
+              }
+            ],
+            "http_request": {
+              "http_method": "PATCH",
+              "url": {
+                "path": "/v1/shipments/SHP-88412"
+              }
+            },
+            "http_response": {
+              "code": 200
+            },
+            "unmapped": {
+              "shipper_id": "cust-northgate",
+              "changed_fields": "carrier_scac,remit_to"
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "new ASN, then 204 to a new carrier (no portal record)",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-14T09:58:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-7be3339e-1386",
+            "published": "2026-10-14T09:58:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00uc9625cf1x1",
+              "type": "User",
+              "alternateId": "j.devries@harbourline.example",
+              "displayName": "Jan de Vries",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "203.0.113.140",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "United States",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d72e32ac"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64511,
+              "asOrg": "Residential proxy network",
+              "isp": "Residential proxy network",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqe3395429",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-574c7cf8",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txcb8eeea9",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "203.0.113.140",
+                  "geographicalContext": {
+                    "country": "United States"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "asn_new_for_user": true,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t1-1",
+          "ts": "2026-10-14T10:16:00.000Z",
+          "source": "edi",
+          "record": {
+            "time": 1791972960000,
+            "class_uid": 4002,
+            "category_uid": 4,
+            "activity_id": 6,
+            "type_uid": 400206,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "edi-gateway",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "edi-d6daebd8",
+              "event_code": "edi.send",
+              "correlation_uid": "req-a3a419"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "dst_endpoint": {
+              "hostname": "edi.x.example"
+            },
+            "http_response": {
+              "code": 200
+            },
+            "unmapped": {
+              "document_type": "X12 204",
+              "scac": "QKHX",
+              "shipper_id": "cust-northgate",
+              "shipment": "SHP-88412",
+              "triggered_by": "u-1001"
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "carrier_new_for_shipper": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "new ASN, ETA edit only",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-14T09:58:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-7be3339e-1386",
+            "published": "2026-10-14T09:58:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00uc9625cf1x1",
+              "type": "User",
+              "alternateId": "j.devries@harbourline.example",
+              "displayName": "Jan de Vries",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "203.0.113.140",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "United States",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d72e32ac"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64511,
+              "asOrg": "Residential proxy network",
+              "isp": "Residential proxy network",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqe3395429",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-574c7cf8",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txcb8eeea9",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "203.0.113.140",
+                  "geographicalContext": {
+                    "country": "United States"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "asn_new_for_user": true,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t2-1",
+          "ts": "2026-10-14T10:15:00.000Z",
+          "source": "portal",
+          "record": {
+            "time": 1791972900000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "customer-portal",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "portal-ff5e0744",
+              "event_code": "api.request",
+              "correlation_uid": "req-fe8e09"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "shipments.update",
+              "request": {
+                "uid": "req-251459b"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1001",
+                "name": "j.devries@harbourline.example"
+              },
+              "session": {
+                "uid": "s-e68278",
+                "is_mfa": true
+              },
+              "app_uid": "portal-web"
+            },
+            "src_endpoint": {
+              "ip": "203.0.113.140",
+              "location": {
+                "country": "US"
+              }
+            },
+            "resources": [
+              {
+                "uid": "SHP-88412",
+                "type": "record"
+              }
+            ],
+            "http_request": {
+              "http_method": "PATCH",
+              "url": {
+                "path": "/v1/shipments/SHP-88412"
+              }
+            },
+            "http_response": {
+              "code": 200
+            },
+            "unmapped": {
+              "shipper_id": "cust-northgate",
+              "changed_fields": "eta"
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "known network, remit-to edit",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t3-0",
+          "ts": "2026-10-14T09:58:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-7be3339e-1386",
+            "published": "2026-10-14T09:58:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00uc9625cf1x1",
+              "type": "User",
+              "alternateId": "j.devries@harbourline.example",
+              "displayName": "Jan de Vries",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102b47830e"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqe3395429",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-574c7cf8",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txcb8eeea9",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t3-1",
+          "ts": "2026-10-14T10:15:00.000Z",
+          "source": "portal",
+          "record": {
+            "time": 1791972900000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "customer-portal",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "portal-510d1679",
+              "event_code": "api.request",
+              "correlation_uid": "req-fe8e09"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "shipments.update",
+              "request": {
+                "uid": "req-251459b"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1001",
+                "name": "j.devries@harbourline.example"
+              },
+              "session": {
+                "uid": "s-e68278",
+                "is_mfa": true
+              },
+              "app_uid": "portal-web"
+            },
+            "src_endpoint": {
+              "ip": "203.0.113.140",
+              "location": {
+                "country": "US"
+              }
+            },
+            "resources": [
+              {
+                "uid": "SHP-88412",
+                "type": "record"
+              }
+            ],
+            "http_request": {
+              "http_method": "PATCH",
+              "url": {
+                "path": "/v1/shipments/SHP-88412"
+              }
+            },
+            "http_response": {
+              "code": 200
+            },
+            "unmapped": {
+              "shipper_id": "cust-northgate",
+              "changed_fields": "remit_to"
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "new ASN, 204 to the shipper's usual carrier",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t4-0",
+          "ts": "2026-10-14T09:58:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-7be3339e-1386",
+            "published": "2026-10-14T09:58:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00uc9625cf1x1",
+              "type": "User",
+              "alternateId": "j.devries@harbourline.example",
+              "displayName": "Jan de Vries",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "203.0.113.140",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "United States",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d72e32ac"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64511,
+              "asOrg": "Residential proxy network",
+              "isp": "Residential proxy network",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqe3395429",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-574c7cf8",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txcb8eeea9",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "203.0.113.140",
+                  "geographicalContext": {
+                    "country": "United States"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "asn_new_for_user": true,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t4-1",
+          "ts": "2026-10-14T10:16:00.000Z",
+          "source": "edi",
+          "record": {
+            "time": 1791972960000,
+            "class_uid": 4002,
+            "category_uid": 4,
+            "activity_id": 6,
+            "type_uid": 400206,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "edi-gateway",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "edi-cb6de575",
+              "event_code": "edi.send",
+              "correlation_uid": "req-a3a419"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "dst_endpoint": {
+              "hostname": "edi.x.example"
+            },
+            "http_response": {
+              "code": 200
+            },
+            "unmapped": {
+              "document_type": "X12 204",
+              "scac": "LKRL",
+              "shipper_id": "cust-northgate",
+              "shipment": "SHP-88412",
+              "triggered_by": "u-1001"
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "carrier_new_for_shipper": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

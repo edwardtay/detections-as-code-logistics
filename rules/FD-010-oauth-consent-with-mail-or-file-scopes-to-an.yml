@@ -1,0 +1,28 @@
+# FD-010: OAuth consent with mail or file scopes to an unreviewed app
+# ATT&CK T1528 | source: Microsoft 365 audit (Entra ID) | severity: medium | owner: saas-detections | schedule: every 30 min
+title: User consent granting mail or file scopes to an app outside the reviewed list
+id: 93d884c2-01ee-53a7-8b24-dc7247c93469
+status: test
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.credential-access
+  - attack.t1528
+logsource:
+  product: m365
+  service: audit
+detection:
+  selection:
+    Operation: Consent to application.
+    ModifiedProperties.NewValue|contains:
+      - Mail.Read
+      - Mail.Send
+      - Files.Read.All
+      - Files.ReadWrite.All
+  filter_reviewed_apps:
+    Target.ID: a9f1c3e0-0000-4000-8000-00000000c0de
+  condition: selection and not filter_reviewed_apps
+falsepositives:
+  - Productivity add-ons that should go through app review
+description: Entra ID user consent that gives a third-party app mail or file access.
+level: medium

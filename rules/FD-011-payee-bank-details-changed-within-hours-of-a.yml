@@ -1,0 +1,65 @@
+# FD-011: Payee bank details changed within hours of a new-device sign-in
+# ATT&CK T1657 | source: Payments service + Okta | severity: critical | owner: fraud-detections | schedule: every 5 min
+title: Okta sign-in from a new device or network without an IT device ticket
+id: 67bcc3ba-1099-5dff-b529-0fb8659b788a
+name: okta_session_new_device_or_network
+status: test
+description: Base rule for FD-011.
+author: Edward Tay
+date: 2026-10-20
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType: user.session.start
+    outcome.result: SUCCESS
+  new_device:
+    enrichment.device_new_for_user: true
+  new_network:
+    enrichment.asn_new_for_user: true
+  filter_it_device_ticket:
+    # verified IT ticket for a replacement device in the last 24 hours
+    enrichment.it_device_ticket: true
+  condition: selection and 1 of new_* and not filter_it_device_ticket
+falsepositives:
+  - Travel and new home networks
+tags:
+  - attack.initial-access
+  - attack.t1078.004
+level: low
+---
+title: Payee bank details changed in the payments service
+id: d149370e-1235-5a4d-92d0-400986f22df4
+name: payments_payee_change
+status: test
+description: Base rule for FD-011. Exists only because the payments contract requires money.beneficiary events.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.impact
+  - attack.t1657
+logsource:
+  product: harbourline
+  service: payments
+detection:
+  selection:
+    metadata.event_code: money.beneficiary
+    api.operation: beneficiaries.update
+  condition: selection
+falsepositives:
+  - Suppliers that really changed banks
+level: medium
+---
+title: Payee change within 4 hours of a new-device or new-network sign-in
+id: 3d3f76f9-93ee-5ddf-995c-599820e56770
+status: test
+correlation:
+  type: temporal_ordered
+  rules:
+    - okta_session_new_device_or_network
+    - payments_payee_change
+  group-by:
+    - enrichment.subject_user
+  timespan: 4h
+level: critical

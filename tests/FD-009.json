@@ -1,0 +1,125 @@
+{
+  "detection": "FD-009",
+  "cases": [
+    {
+      "name": "forward to an outside domain",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-14T10:03:00.000Z",
+          "source": "m365",
+          "record": {
+            "CreationTime": "2026-10-14T10:03:00",
+            "Id": "3de1e0ca-6595-4b21-8295-2668639527fb",
+            "Operation": "New-InboxRule",
+            "OrganizationId": "3f2a9c1e-0000-4000-8000-0000000000aa",
+            "RecordType": 1,
+            "ResultStatus": "True",
+            "UserKey": "100320037C37CE94",
+            "UserType": 0,
+            "Version": 1,
+            "Workload": "Exchange",
+            "ClientIP": "192.0.2.10:40000",
+            "UserId": "j.devries@harbourline.example",
+            "ObjectId": "j.devries\\.",
+            "AppId": "00000002-0000-0ff1-ce00-000000000000",
+            "Parameters": [
+              {
+                "Name": "Name",
+                "Value": "."
+              },
+              {
+                "Name": "ForwardTo",
+                "Value": "dispatch.desk@quickhaul-x.example"
+              }
+            ],
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "forward to the approved AP partner",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-13T08:30:00.000Z",
+          "source": "m365",
+          "record": {
+            "CreationTime": "2026-10-13T08:30:00",
+            "Id": "5633aa5d-1f55-4804-8255-4cbd21554b2a",
+            "Operation": "New-InboxRule",
+            "OrganizationId": "3f2a9c1e-0000-4000-8000-0000000000aa",
+            "RecordType": 1,
+            "ResultStatus": "True",
+            "UserKey": "100320037C37CE94",
+            "UserType": 0,
+            "Version": 1,
+            "Workload": "Exchange",
+            "ClientIP": "192.0.2.10:40000",
+            "UserId": "j.devries@harbourline.example",
+            "ObjectId": "j.devries\\AP",
+            "AppId": "00000002-0000-0ff1-ce00-000000000000",
+            "Parameters": [
+              {
+                "Name": "Name",
+                "Value": "AP"
+              },
+              {
+                "Name": "ForwardTo",
+                "Value": "ap@partner-accounting.example"
+              }
+            ],
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "move-to-folder rule only",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-13T08:30:00.000Z",
+          "source": "m365",
+          "record": {
+            "CreationTime": "2026-10-13T08:30:00",
+            "Id": "5633aa5d-1f55-4804-8255-4cbd21554b2a",
+            "Operation": "New-InboxRule",
+            "OrganizationId": "3f2a9c1e-0000-4000-8000-0000000000aa",
+            "RecordType": 1,
+            "ResultStatus": "True",
+            "UserKey": "100320037C37CE94",
+            "UserType": 0,
+            "Version": 1,
+            "Workload": "Exchange",
+            "ClientIP": "192.0.2.10:40000",
+            "UserId": "j.devries@harbourline.example",
+            "ObjectId": "j.devries\\news",
+            "AppId": "00000002-0000-0ff1-ce00-000000000000",
+            "Parameters": [
+              {
+                "Name": "Name",
+                "Value": "news"
+              },
+              {
+                "Name": "MoveToFolder",
+                "Value": "Newsletters"
+              }
+            ],
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

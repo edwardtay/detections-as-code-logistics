@@ -1,0 +1,41 @@
+# FD-013: Backup or snapshot deletion in bulk
+# ATT&CK T1490 | source: AWS CloudTrail | severity: high | owner: cloud-detections | schedule: every 15 min
+title: Snapshot or recovery point deleted outside the lifecycle role
+id: 0e578da0-80ae-5590-8e33-0c0ce2f5d56a
+name: backup_deleted_non_lifecycle
+status: test
+description: Base rule for FD-013.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.impact
+  - attack.t1490
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventName:
+      - DeleteSnapshot
+      - DeleteDBSnapshot
+      - DeleteRecoveryPoint
+  filter_lifecycle:
+    userIdentity.sessionContext.sessionIssuer.userName: backup-lifecycle
+  condition: selection and not filter_lifecycle
+falsepositives:
+  - Manual clean-up after a migration
+level: low
+---
+title: Ten or more backup deletions by one principal in 30 minutes
+id: 629ae7f1-3667-5721-b458-dedb1d5ba8e1
+status: test
+correlation:
+  type: event_count
+  rules:
+    - backup_deleted_non_lifecycle
+  group-by:
+    - enrichment.principal
+  timespan: 30m
+  condition:
+    gte: 10
+level: high

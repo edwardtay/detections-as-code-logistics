@@ -1,0 +1,641 @@
+{
+  "detection": "FD-011",
+  "cases": [
+    {
+      "name": "new device sign-in, payee change 15 min later",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-15T08:37:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-9c0c5c7a-8d23",
+            "published": "2026-10-15T08:37:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00ub28e0f97x1",
+              "type": "User",
+              "alternateId": "m.jansen@harbourline.example",
+              "displayName": "Maaike Jansen",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "203.0.113.66",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Romania",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102f521eb24"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64510,
+              "asOrg": "VPS hosting provider",
+              "isp": "VPS hosting provider",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqf2e44eff",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-new",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx35973ef",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "203.0.113.66",
+                  "geographicalContext": {
+                    "country": "Romania"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": true,
+              "device_new_for_user": true,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t0-1",
+          "ts": "2026-10-15T08:52:00.000Z",
+          "source": "payments",
+          "record": {
+            "time": 1792054320000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "payments-svc",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "payments-3b7ea8af",
+              "event_code": "money.beneficiary",
+              "correlation_uid": "req-7f6631"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "beneficiaries.update",
+              "request": {
+                "uid": "req-e66d19cd"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1009",
+                "name": "m.jansen@harbourline.example"
+              },
+              "session": {
+                "uid": "s-513a14",
+                "is_mfa": true
+              }
+            },
+            "src_endpoint": {
+              "ip": "203.0.113.66",
+              "location": {
+                "country": "RO"
+              }
+            },
+            "resources": [
+              {
+                "uid": "ben_2207",
+                "type": "beneficiary"
+              }
+            ],
+            "unmapped": {
+              "account_last4": "9902"
+            },
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "new laptop under a verified IT ticket",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-14T08:10:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-24bce0f7-7a29",
+            "published": "2026-10-14T08:10:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00u54487cfx1",
+              "type": "User",
+              "alternateId": "a.vandijk@harbourline.example",
+              "displayName": "Anouk van Dijk",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102402a1bc4"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req836f400c",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-av-newlaptop",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txddb56e90",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "a.vandijk@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "it_device_ticket": true
+            }
+          }
+        },
+        {
+          "id": "t1-1",
+          "ts": "2026-10-14T09:40:00.000Z",
+          "source": "payments",
+          "record": {
+            "time": 1791970800000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "payments-svc",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "payments-5e5f7a3a",
+              "event_code": "money.beneficiary",
+              "correlation_uid": "req-c95d7f"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "beneficiaries.update",
+              "request": {
+                "uid": "req-2e7e47aa"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1010",
+                "name": "a.vandijk@harbourline.example"
+              },
+              "session": {
+                "uid": "s-f56f15",
+                "is_mfa": true
+              }
+            },
+            "resources": [
+              {
+                "uid": "ben_2214",
+                "type": "record"
+              }
+            ],
+            "unmapped": {},
+            "enrichment": {
+              "subject_user": "a.vandijk@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "known device, payee change",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-15T08:37:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-9c0c5c7a-8d23",
+            "published": "2026-10-15T08:37:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00ub28e0f97x1",
+              "type": "User",
+              "alternateId": "m.jansen@harbourline.example",
+              "displayName": "Maaike Jansen",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10263b0ae7"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqf2e44eff",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-f40d98f6",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx35973ef",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t2-1",
+          "ts": "2026-10-15T08:52:00.000Z",
+          "source": "payments",
+          "record": {
+            "time": 1792054320000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "payments-svc",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "payments-3b7ea8af",
+              "event_code": "money.beneficiary",
+              "correlation_uid": "req-7f6631"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "beneficiaries.update",
+              "request": {
+                "uid": "req-e66d19cd"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1009",
+                "name": "m.jansen@harbourline.example"
+              },
+              "session": {
+                "uid": "s-513a14",
+                "is_mfa": true
+              }
+            },
+            "src_endpoint": {
+              "ip": "203.0.113.66",
+              "location": {
+                "country": "RO"
+              }
+            },
+            "resources": [
+              {
+                "uid": "ben_2207",
+                "type": "beneficiary"
+              }
+            ],
+            "unmapped": {
+              "account_last4": "9902"
+            },
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "new device, payee change 6 h later",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t3-0",
+          "ts": "2026-10-15T08:37:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-9c0c5c7a-8d23",
+            "published": "2026-10-15T08:37:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00ub28e0f97x1",
+              "type": "User",
+              "alternateId": "m.jansen@harbourline.example",
+              "displayName": "Maaike Jansen",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10263b0ae7"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqf2e44eff",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-new",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx35973ef",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "it_device_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t3-1",
+          "ts": "2026-10-15T14:52:00.000Z",
+          "source": "payments",
+          "record": {
+            "time": 1792075920000,
+            "class_uid": 6003,
+            "category_uid": 6,
+            "activity_id": 3,
+            "type_uid": 600303,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "payments-svc",
+                "vendor_name": "Harbourline"
+              },
+              "uid": "payments-6014670c",
+              "event_code": "money.beneficiary",
+              "correlation_uid": "req-3c4915"
+            },
+            "cloud": {
+              "provider": "AWS",
+              "region": "eu-west-1"
+            },
+            "api": {
+              "operation": "beneficiaries.update",
+              "request": {
+                "uid": "req-405f6dc2"
+              }
+            },
+            "actor": {
+              "user": {
+                "uid": "u-1009",
+                "name": "m.jansen@harbourline.example"
+              },
+              "session": {
+                "uid": "s-513a14",
+                "is_mfa": true
+              }
+            },
+            "src_endpoint": {
+              "ip": "203.0.113.66",
+              "location": {
+                "country": "RO"
+              }
+            },
+            "resources": [
+              {
+                "uid": "ben_2207",
+                "type": "beneficiary"
+              }
+            ],
+            "unmapped": {
+              "account_last4": "9902"
+            },
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

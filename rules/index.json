@@ -1,0 +1,145 @@
+[
+  {
+    "id": "FD-001",
+    "title": "MFA factor reset, then a sign-in from a new device",
+    "technique": "T1556.006",
+    "source": "Okta System Log",
+    "severity": "high",
+    "owner": "identity-detections",
+    "file": "rules/FD-001-mfa-factor-reset-then-a-sign-in-from-a-new.yml",
+    "tests": 4,
+    "demoPass": true
+  },
+  {
+    "id": "FD-002",
+    "title": "Push fatigue: repeated rejected pushes, then an approval",
+    "technique": "T1621",
+    "source": "Okta System Log",
+    "severity": "high",
+    "owner": "identity-detections",
+    "file": "rules/FD-002-push-fatigue-repeated-rejected-pushes-then-an.yml",
+    "tests": 4,
+    "demoPass": true
+  },
+  {
+    "id": "FD-003",
+    "title": "Password spray: one source, many users",
+    "technique": "T1110.003",
+    "source": "Okta System Log",
+    "severity": "medium",
+    "owner": "identity-detections",
+    "file": "rules/FD-003-password-spray-one-source-many-users.yml",
+    "tests": 3,
+    "demoPass": true
+  },
+  {
+    "id": "FD-004",
+    "title": "CloudTrail stopped, deleted or narrowed by a non-IaC principal",
+    "technique": "T1685.002",
+    "source": "AWS CloudTrail",
+    "severity": "high",
+    "owner": "cloud-detections",
+    "file": "rules/FD-004-cloudtrail-stopped-deleted-or-narrowed-by-a-non.yml",
+    "tests": 4,
+    "demoPass": true
+  },
+  {
+    "id": "FD-005",
+    "title": "Access key created for another IAM user",
+    "technique": "T1098.001",
+    "source": "AWS CloudTrail",
+    "severity": "high",
+    "owner": "cloud-detections",
+    "file": "rules/FD-005-access-key-created-for-another-iam-user.yml",
+    "tests": 3,
+    "demoPass": true
+  },
+  {
+    "id": "FD-006",
+    "title": "Bulk reads from the customs documents bucket by a new principal",
+    "technique": "T1530",
+    "source": "AWS CloudTrail (S3 data events)",
+    "severity": "high",
+    "owner": "cloud-detections",
+    "file": "rules/FD-006-bulk-reads-from-the-customs-documents-bucket-by.yml",
+    "tests": 3,
+    "demoPass": true
+  },
+  {
+    "id": "FD-007",
+    "title": "exec into a production pod outside a change window",
+    "technique": "T1609",
+    "source": "Kubernetes audit log",
+    "severity": "high",
+    "owner": "platform-detections",
+    "file": "rules/FD-007-exec-into-a-production-pod-outside-a-change.yml",
+    "tests": 4,
+    "demoPass": true
+  },
+  {
+    "id": "FD-008",
+    "title": "Remote access tool installed on a laptop",
+    "technique": "T1219",
+    "source": "EDR process events (OCSF)",
+    "severity": "high",
+    "owner": "endpoint-detections",
+    "file": "rules/FD-008-remote-access-tool-installed-on-a-laptop.yml",
+    "tests": 3,
+    "demoPass": true
+  },
+  {
+    "id": "FD-009",
+    "title": "Mailbox rule forwarding mail outside the company",
+    "technique": "T1114.003",
+    "source": "Microsoft 365 audit",
+    "severity": "medium",
+    "owner": "saas-detections",
+    "file": "rules/FD-009-mailbox-rule-forwarding-mail-outside-the-company.yml",
+    "tests": 3,
+    "demoPass": true
+  },
+  {
+    "id": "FD-010",
+    "title": "OAuth consent with mail or file scopes to an unreviewed app",
+    "technique": "T1528",
+    "source": "Microsoft 365 audit (Entra ID)",
+    "severity": "medium",
+    "owner": "saas-detections",
+    "file": "rules/FD-010-oauth-consent-with-mail-or-file-scopes-to-an.yml",
+    "tests": 3,
+    "demoPass": true
+  },
+  {
+    "id": "FD-011",
+    "title": "Payee bank details changed within hours of a new-device sign-in",
+    "technique": "T1657",
+    "source": "Payments service + Okta",
+    "severity": "critical",
+    "owner": "fraud-detections",
+    "file": "rules/FD-011-payee-bank-details-changed-within-hours-of-a.yml",
+    "tests": 4,
+    "demoPass": true
+  },
+  {
+    "id": "FD-012",
+    "title": "Sign-in from a new network, then load re-tender or remit-to change",
+    "technique": "T1078",
+    "source": "Okta + customer portal + EDI gateway",
+    "severity": "high",
+    "owner": "fraud-detections",
+    "file": "rules/FD-012-sign-in-from-a-new-network-then-load-re-tender.yml",
+    "tests": 5,
+    "demoPass": true
+  },
+  {
+    "id": "FD-013",
+    "title": "Backup or snapshot deletion in bulk",
+    "technique": "T1490",
+    "source": "AWS CloudTrail",
+    "severity": "high",
+    "owner": "cloud-detections",
+    "file": "rules/FD-013-backup-or-snapshot-deletion-in-bulk.yml",
+    "tests": 3,
+    "demoPass": true
+  }
+]

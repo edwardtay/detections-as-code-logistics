@@ -1,0 +1,33 @@
+# FD-007: exec into a production pod outside a change window
+# ATT&CK T1609 | source: Kubernetes audit log | severity: high | owner: platform-detections | schedule: every 5 min
+title: kubectl exec or attach into a production pod outside a change window or incident
+id: 2de63cc9-deb8-5e3b-b498-69e7cb057dc3
+status: test
+description: pods/exec and pods/attach in prod-* namespaces, joined to the change calendar and the on-call incident list.
+author: Edward Tay
+date: 2026-10-20
+references:
+  - https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/
+tags:
+  - attack.execution
+  - attack.t1609
+logsource:
+  category: application
+  product: kubernetes
+  service: audit
+detection:
+  selection:
+    verb: create
+    objectRef.resource: pods
+    objectRef.subresource:
+      - exec
+      - attach
+    objectRef.namespace|startswith: prod-
+  filter_change_window:
+    enrichment.change_window|startswith: CHG-
+  filter_oncall_incident:
+    enrichment.oncall_incident|startswith: PD-
+  condition: selection and not 1 of filter_*
+falsepositives:
+  - On-call debugging; joined to the incident record
+level: high

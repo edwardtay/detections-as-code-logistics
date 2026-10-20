@@ -1,0 +1,32 @@
+# FD-009: Mailbox rule forwarding mail outside the company
+# ATT&CK T1114.003 | source: Microsoft 365 audit | severity: medium | owner: saas-detections | schedule: every 30 min
+title: Exchange inbox rule forwards or redirects mail to an external address
+id: 49e6e7e6-2c73-5a6c-a152-135f1527d148
+status: test
+description: >
+  New-InboxRule or Set-InboxRule with a forwarding parameter. Parameters is a list of Name and
+  Value pairs, so the selection and the filter each look at the whole list.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.collection
+  - attack.t1114.003
+logsource:
+  product: m365
+  service: exchange
+detection:
+  selection_op:
+    Operation:
+      - New-InboxRule
+      - Set-InboxRule
+  selection_forward:
+    Parameters.Name:
+      - ForwardTo
+      - RedirectTo
+      - ForwardAsAttachmentTo
+  filter_approved_partner:
+    Parameters.Value|endswith: '@partner-accounting.example'
+  condition: all of selection_* and not filter_approved_partner
+falsepositives:
+  - Forwarding to a partner that is not on the approved list
+level: medium

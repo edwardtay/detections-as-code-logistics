@@ -1,0 +1,1331 @@
+{
+  "detection": "FD-002",
+  "cases": [
+    {
+      "name": "three denials then an approval",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-16T06:30:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-aada7453-3655",
+            "published": "2026-10-16T06:30:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req3665f97d",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx374bedf2",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t0-1",
+          "ts": "2026-10-16T06:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-2f1a1ae1-5acf",
+            "published": "2026-10-16T06:31:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqd822854f",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx34cb638c",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t0-2",
+          "ts": "2026-10-16T06:32:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-92db2ea8-13c2",
+            "published": "2026-10-16T06:32:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req7004782e",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx8e55ebe5",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t0-3",
+          "ts": "2026-10-16T06:33:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-14fd9352-e424",
+            "published": "2026-10-16T06:33:00.000Z",
+            "eventType": "user.authentication.auth_via_mfa",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Authentication of user via MFA",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req5c2646e8",
+                "requestUri": "/idp/idx/challenge/answer",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/challenge/answer"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txfe54a9ab",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "three failed OKTA_VERIFY_PUSH then success (Identity Engine form)",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-16T06:30:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-3f52b1fb-3655",
+            "published": "2026-10-16T06:30:00.000Z",
+            "eventType": "user.authentication.auth_via_mfa",
+            "version": "0",
+            "severity": "WARN",
+            "legacyEventType": null,
+            "displayMessage": "Authentication of user via MFA",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d4473cff"
+            },
+            "outcome": {
+              "result": "FAILURE",
+              "reason": "INVALID_CREDENTIALS"
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqbbf146ad",
+                "requestUri": "/idp/idx/challenge/answer",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/challenge/answer"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx374bedf2",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t1-1",
+          "ts": "2026-10-16T06:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-e3dfe669-5acf",
+            "published": "2026-10-16T06:31:00.000Z",
+            "eventType": "user.authentication.auth_via_mfa",
+            "version": "0",
+            "severity": "WARN",
+            "legacyEventType": null,
+            "displayMessage": "Authentication of user via MFA",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d4473cff"
+            },
+            "outcome": {
+              "result": "FAILURE",
+              "reason": "INVALID_CREDENTIALS"
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqb96409ab",
+                "requestUri": "/idp/idx/challenge/answer",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/challenge/answer"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx34cb638c",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t1-2",
+          "ts": "2026-10-16T06:32:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-5e51e2f0-13c2",
+            "published": "2026-10-16T06:32:00.000Z",
+            "eventType": "user.authentication.auth_via_mfa",
+            "version": "0",
+            "severity": "WARN",
+            "legacyEventType": null,
+            "displayMessage": "Authentication of user via MFA",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d4473cff"
+            },
+            "outcome": {
+              "result": "FAILURE",
+              "reason": "INVALID_CREDENTIALS"
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req48a4d83e",
+                "requestUri": "/idp/idx/challenge/answer",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/challenge/answer"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx8e55ebe5",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t1-3",
+          "ts": "2026-10-16T06:34:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-6c93570d-7de0",
+            "published": "2026-10-16T06:34:00.000Z",
+            "eventType": "user.authentication.auth_via_mfa",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Authentication of user via MFA",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d4473cff"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req41917eb3",
+                "requestUri": "/idp/idx/challenge/answer",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/challenge/answer"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx28d303e4",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "two denials then an approval",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-16T06:30:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-aada7453-3655",
+            "published": "2026-10-16T06:30:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req3665f97d",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx374bedf2",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t2-1",
+          "ts": "2026-10-16T06:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-2f1a1ae1-5acf",
+            "published": "2026-10-16T06:31:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqd822854f",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx34cb638c",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t2-2",
+          "ts": "2026-10-16T06:33:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-14fd9352-e424",
+            "published": "2026-10-16T06:33:00.000Z",
+            "eventType": "user.authentication.auth_via_mfa",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Authentication of user via MFA",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102d4473cff"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req5c2646e8",
+                "requestUri": "/idp/idx/challenge/answer",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/challenge/answer"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txfe54a9ab",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "three denials, no approval",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t3-0",
+          "ts": "2026-10-16T06:30:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-aada7453-3655",
+            "published": "2026-10-16T06:30:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req3665f97d",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx374bedf2",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t3-1",
+          "ts": "2026-10-16T06:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-2f1a1ae1-5acf",
+            "published": "2026-10-16T06:31:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqd822854f",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx34cb638c",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        },
+        {
+          "id": "t3-2",
+          "ts": "2026-10-16T06:32:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-92db2ea8-13c2",
+            "published": "2026-10-16T06:32:00.000Z",
+            "eventType": "user.mfa.okta_verify.deny_push",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User rejected Okta push verify",
+            "actor": {
+              "id": "00ube981738x1",
+              "type": "User",
+              "alternateId": "r.mulder@harbourline.example",
+              "displayName": "Ruben Mulder",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "198.51.100.12",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102544ef23a"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64501,
+              "asOrg": "Home broadband NL",
+              "isp": "Home broadband NL",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req7004782e",
+                "requestUri": "/idp/idx/authenticators/poll",
+                "deviceFingerprint": "dfp-7335be4f",
+                "factor": "OKTA_VERIFY_PUSH",
+                "threatSuspected": "false",
+                "url": "/idp/idx/authenticators/poll"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx8e55ebe5",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "198.51.100.12",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "r.mulder@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

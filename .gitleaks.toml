@@ -1,0 +1,8 @@
+# The test fixtures use AWS identifiers in the documented example form (ending in EXAMPLE),
+# like AWS's own AKIAIOSFODNN7EXAMPLE. They are not credentials. Everything else uses the default rules.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "AWS documentation-style example identifiers in synthetic test data"
+regexes = ['''^(AKIA|ASIA|AROA|AIDA)[A-Z0-9]{4,}EXAMPLE?$''']

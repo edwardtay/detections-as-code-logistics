@@ -1,0 +1,32 @@
+# FD-008: Remote access tool installed on a laptop
+# ATT&CK T1219 | source: EDR process events (OCSF) | severity: high | owner: endpoint-detections | schedule: every 5 min
+title: Remote monitoring and management client started outside the IT relay
+id: 7304af7f-ffc9-5a3e-839a-49f1924ff290
+status: test
+description: >
+  RMM clients used in the 2025 freight cargo-theft campaigns. The company's own ScreenConnect
+  relay is allowlisted by host. Written in the Sigma Windows process_creation taxonomy; the pipeline
+  maps Image, CommandLine and ParentImage to OCSF Process Activity fields.
+author: Edward Tay
+date: 2026-10-20
+references:
+  - https://www.proofpoint.com/us/blog/threat-insight/remote-access-real-cargo-cybercriminals-targeting-trucking-and-logistics
+tags:
+  - attack.command-and-control
+  - attack.t1219
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith:
+      - '\ScreenConnect.ClientService.exe'
+      - '\ScreenConnect.WindowsClient.exe'
+      - '\AnyDesk.exe'
+      - '\TeamViewer.exe'
+  filter_it_relay:
+    CommandLine|contains: 'h=support.harbourline.example'
+  condition: selection and not filter_it_relay
+falsepositives:
+  - IT remote support through a relay that is not on the allowlist
+level: high

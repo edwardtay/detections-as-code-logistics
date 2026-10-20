@@ -1,0 +1,99 @@
+# FD-012: Sign-in from a new network, then load re-tender or remit-to change
+# ATT&CK T1078 | source: Okta + customer portal + EDI gateway | severity: high | owner: fraud-detections | schedule: every 10 min
+title: Okta sign-in from an ASN new to the user
+id: 22af7010-f9b0-569d-bdb0-d30ba97d1533
+name: okta_session_new_network
+status: test
+description: Base rule for FD-012.
+author: Edward Tay
+date: 2026-10-20
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType: user.session.start
+    outcome.result: SUCCESS
+    enrichment.asn_new_for_user: true
+  condition: selection
+falsepositives:
+  - Travel, hotel and mobile networks
+tags:
+  - attack.initial-access
+  - attack.t1078.004
+level: low
+---
+title: Portal shipment edit to carrier, remit-to, pickup or consignee
+id: f268985c-5c85-52fc-844c-3b35c57857bc
+name: portal_sensitive_shipment_edit
+status: test
+description: Base rule for FD-012. Tuning option, drop pickup_address if field sales edit it while travelling.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.initial-access
+  - attack.t1078
+logsource:
+  product: harbourline
+  service: customer-portal
+detection:
+  selection:
+    api.operation: shipments.update
+    unmapped.changed_fields|contains:
+      - carrier_scac
+      - remit_to
+      - pickup_address
+      - consignee
+  condition: selection
+falsepositives:
+  - Customers correcting addresses
+level: low
+---
+title: X12 204 tender sent to a carrier the shipper never used
+id: 0d766fca-daff-59c0-b352-8e4dbf4a2996
+name: edi_tender_new_carrier
+status: test
+description: Base rule for FD-012, the EDI path. Catches the re-tender even without portal telemetry.
+author: Edward Tay
+date: 2026-10-20
+logsource:
+  product: harbourline
+  service: edi-gateway
+detection:
+  selection:
+    metadata.event_code: edi.send
+    unmapped.document_type: X12 204
+    enrichment.carrier_new_for_shipper: true
+  condition: selection
+falsepositives:
+  - A shipper onboarding a new carrier
+tags:
+  - attack.initial-access
+  - attack.t1078
+level: low
+---
+title: New-network sign-in, then a sensitive shipment edit within 6 hours
+id: 43b66b09-7fe8-5f7a-b844-fbe5b3e1e43b
+status: test
+correlation:
+  type: temporal_ordered
+  rules:
+    - okta_session_new_network
+    - portal_sensitive_shipment_edit
+  group-by:
+    - enrichment.subject_user
+  timespan: 6h
+level: high
+---
+title: New-network sign-in, then a tender to a new carrier within 6 hours
+id: 1fd15ddd-4e23-5e7f-a2a7-7bf04eee2cb4
+status: test
+correlation:
+  type: temporal_ordered
+  rules:
+    - okta_session_new_network
+    - edi_tender_new_carrier
+  group-by:
+    - enrichment.subject_user
+  timespan: 6h
+level: high

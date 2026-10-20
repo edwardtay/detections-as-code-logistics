@@ -1,0 +1,3 @@
+pySigma==1.5.1
+pySigma-backend-splunk==2.1.0
+pySigma-backend-kusto==1.0.1

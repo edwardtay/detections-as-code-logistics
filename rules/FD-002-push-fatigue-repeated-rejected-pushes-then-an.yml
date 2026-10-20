@@ -1,0 +1,80 @@
+# FD-002: Push fatigue: repeated rejected pushes, then an approval
+# ATT&CK T1621 | source: Okta System Log | severity: high | owner: identity-detections | schedule: every 5 min
+title: Okta push rejected or failed
+id: 2d0662f3-d4f7-5199-8c73-8283517251d6
+name: okta_push_rejected
+status: test
+description: >
+  Base rule for FD-002. Okta records a rejected push either as user.mfa.okta_verify.deny_push or,
+  in the Identity Engine flow seen in the public Splunk attack_data sample, as
+  user.authentication.auth_via_mfa FAILURE with factor OKTA_VERIFY_PUSH. Both forms are covered.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.credential-access
+  - attack.t1621
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection_deny:
+    eventType: user.mfa.okta_verify.deny_push
+  selection_failed_push:
+    eventType: user.authentication.auth_via_mfa
+    outcome.result: FAILURE
+    debugContext.debugData.factor: OKTA_VERIFY_PUSH
+  condition: 1 of selection_*
+falsepositives:
+  - A user rejecting a push they did not start by mistake
+level: low
+---
+title: Okta MFA verification succeeded
+id: 928321a2-b910-53a4-a377-433189d68847
+name: okta_mfa_success
+status: test
+author: Edward Tay
+date: 2026-10-20
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType: user.authentication.auth_via_mfa
+    outcome.result: SUCCESS
+  condition: selection
+description: Base rule for FD-002, the approval that ends a push-fatigue run.
+falsepositives:
+  - Every normal sign-in; it only matters inside the correlation
+tags:
+  - attack.credential-access
+  - attack.t1621
+level: informational
+---
+title: Three or more rejected pushes for one user in 10 minutes
+id: 5bd1693e-0a1e-5301-8aee-2985f22e2382
+name: okta_push_rejected_burst
+status: test
+correlation:
+  type: event_count
+  rules:
+    - okta_push_rejected
+  group-by:
+    - enrichment.subject_user
+  timespan: 10m
+  condition:
+    gte: 3
+  generate: false
+level: medium
+---
+title: Push fatigue, rejected pushes then an approval
+id: 00841f8c-aa76-5f5a-833f-e415bfd4fe5b
+status: test
+correlation:
+  type: temporal_ordered
+  rules:
+    - okta_push_rejected_burst
+    - okta_mfa_success
+  group-by:
+    - enrichment.subject_user
+  timespan: 10m
+level: high

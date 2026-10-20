@@ -1,0 +1,27 @@
+# FD-005: Access key created for another IAM user
+# ATT&CK T1098.001 | source: AWS CloudTrail | severity: high | owner: cloud-detections | schedule: every 10 min
+title: IAM access key created for a different user
+id: 12f15f00-eac5-500c-a266-e7100b00d276
+status: test
+description: CreateAccessKey where requestParameters.userName is set and differs from the caller, outside the provisioning role.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.persistence
+  - attack.t1098.001
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: iam.amazonaws.com
+    eventName: CreateAccessKey
+    requestParameters.userName|exists: true
+  filter_self:
+    requestParameters.userName|fieldref: userIdentity.userName
+  filter_provisioner:
+    userIdentity.sessionContext.sessionIssuer.userName: iam-provisioner
+  condition: selection and not 1 of filter_*
+falsepositives:
+  - Break-glass administrators issuing keys by hand
+level: high

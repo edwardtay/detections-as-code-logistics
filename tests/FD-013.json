@@ -1,0 +1,1697 @@
+{
+  "detection": "FD-013",
+  "cases": [
+    {
+      "name": "12 deletions by an engineer role",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-17T03:00:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:00:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:55:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-00"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "359BEA94B7E1F09",
+            "eventID": "da797312-1030-4019-8303-b60e303cf300",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-1",
+          "ts": "2026-10-17T03:00:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:00:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:55:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-01"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "C178FA1C3C1B9160",
+            "eventID": "cea2cdf5-e49e-48c1-849f-0451049eeb20",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-2",
+          "ts": "2026-10-17T03:01:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:01:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:56:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-02"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "587B7BA77135694F",
+            "eventID": "f0fadd38-63e9-452b-84e9-f6be65e9f851",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-3",
+          "ts": "2026-10-17T03:01:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:01:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:56:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-03"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "F1F60E222063AB7E",
+            "eventID": "7a655322-ad99-4621-8d97-b320ad962000",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-4",
+          "ts": "2026-10-17T03:02:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:02:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:57:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-04"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "A56B1A8ECFCC49D6",
+            "eventID": "1ff5c917-75eb-46d2-84eb-a53f73eba3ac",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-5",
+          "ts": "2026-10-17T03:02:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:02:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:57:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-05"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "1A8293E3E06C0BFF",
+            "eventID": "91f539fc-9209-4db7-8309-ff4a940a00dd",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-6",
+          "ts": "2026-10-17T03:03:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:03:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:58:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-06"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "2E20B42853C37B68",
+            "eventID": "eae3a4a9-5c5c-4b48-8f5c-20015e5c1e6e",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-7",
+          "ts": "2026-10-17T03:03:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:03:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:58:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-07"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "A81BDFD81D7C5058",
+            "eventID": "6fa2665d-28a7-4c04-8ba7-40bd2aa73f2a",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-8",
+          "ts": "2026-10-17T03:04:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:04:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:59:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-08"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "1D0E01FBA9E57907",
+            "eventID": "f4d40060-babc-4f83-8bbc-8116bcbc82a9",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-9",
+          "ts": "2026-10-17T03:04:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:04:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:59:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-09"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "B8DB0782A17381EA",
+            "eventID": "b52e0187-ed6c-4182-8c6c-afefeb6cae5c",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-10",
+          "ts": "2026-10-17T03:05:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:05:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:00:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-010"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "988C47B650DC2042",
+            "eventID": "1219e223-90be-4256-8fbe-e0c38ebedf30",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t0-11",
+          "ts": "2026-10-17T03:05:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:05:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:00:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-011"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "6DA32D1F181E4F1F",
+            "eventID": "82cacedc-d243-4f17-8343-c0aad443c23d",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "15 deletions by backup-lifecycle",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-17T03:00:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:00:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:55:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-00"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "359BEA9DE67A1B0",
+            "eventID": "5c6ffc9d-304a-42c4-834a-c77d324ac5ea",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-1",
+          "ts": "2026-10-17T03:00:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:00:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:55:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-01"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "C178FA1C7A7089D9",
+            "eventID": "f2b1e9d2-f113-4059-8e13-2ba0ef132d33",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-2",
+          "ts": "2026-10-17T03:01:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:01:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:56:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-02"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "587B7BA7EF052DC2",
+            "eventID": "43c5899b-59f7-469e-88f7-b50b57f7b378",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-3",
+          "ts": "2026-10-17T03:01:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:01:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:56:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-03"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "F1F60E22EED5E20B",
+            "eventID": "17a802e8-167c-4b9b-877c-7d2e187c7ec1",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-4",
+          "ts": "2026-10-17T03:02:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:02:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:57:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-04"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "A56B1A8E670EB9C3",
+            "eventID": "1e5e4f5c-3b77-4897-8c77-0a2a3d770bbd",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-5",
+          "ts": "2026-10-17T03:02:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:02:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:57:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-05"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "1A8293E37FCE8B12",
+            "eventID": "8a6507ef-bb0b-427a-8a0b-60e7b90b5f54",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-6",
+          "ts": "2026-10-17T03:03:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:03:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:58:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-06"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "2E20B4282EFCCD41",
+            "eventID": "59bb0446-b868-4755-8568-029cb668042f",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-7",
+          "ts": "2026-10-17T03:03:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:03:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:58:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-07"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "A81BDFD85C1984A5",
+            "eventID": "ffc8306a-3241-4412-81a8-81241c1b0000",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-8",
+          "ts": "2026-10-17T03:04:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:04:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:59:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-08"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "1D0E01FBF75DA16",
+            "eventID": "3d12db73-66af-48e6-85af-275364af25c0",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-9",
+          "ts": "2026-10-17T03:04:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:04:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:59:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-09"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "B8DB07824B7BF893",
+            "eventID": "181376cc-e3a4-4047-84a4-51dae5a4536d",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-10",
+          "ts": "2026-10-17T03:05:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:05:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:00:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-010"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "988C47B6FF8D077B",
+            "eventID": "b5988782-6f18-4eb2-8f18-c7e28f18e110",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-11",
+          "ts": "2026-10-17T03:05:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:05:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:00:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-011"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "6DA32D1F600D3BBE",
+            "eventID": "c3ff08cf-887b-47da-877b-2647867b24b4",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-12",
+          "ts": "2026-10-17T03:06:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:06:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:01:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-012"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "21875A547A0A418D",
+            "eventID": "66f7393e-262e-429d-832e-cde4242ecf77",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-13",
+          "ts": "2026-10-17T03:06:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:06:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:01:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-013"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "11F1D23D7BC521A0",
+            "eventID": "d382d3ad-92f3-4e94-85f3-234d94f321ba",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        },
+        {
+          "id": "t1-14",
+          "ts": "2026-10-17T03:07:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:07:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA2E48B72AXXEXAMPLE:r",
+              "arn": "arn:aws:sts::111122223333:assumed-role/backup-lifecycle/r",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA34789F88XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA2E48B72AXXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/backup-lifecycle",
+                  "accountId": "111122223333",
+                  "userName": "backup-lifecycle"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T03:02:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-014"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "B859DB7C6DA86DA",
+            "eventID": "b34310a3-c493-45d6-8393-1443c29312b0",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/backup-lifecycle",
+              "subject_user": "arn:aws:iam::111122223333:role/backup-lifecycle"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 deletions by an engineer role",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-17T03:00:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:00:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:55:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-00"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "359BEA94B7E1F09",
+            "eventID": "da797312-1030-4019-8303-b60e303cf300",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t2-1",
+          "ts": "2026-10-17T03:00:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:00:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:55:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-01"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "C178FA1C3C1B9160",
+            "eventID": "cea2cdf5-e49e-48c1-849f-0451049eeb20",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t2-2",
+          "ts": "2026-10-17T03:01:00.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:01:00Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:56:00Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-02"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "587B7BA77135694F",
+            "eventID": "f0fadd38-63e9-452b-84e9-f6be65e9f851",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        },
+        {
+          "id": "t2-3",
+          "ts": "2026-10-17T03:01:30.000Z",
+          "source": "cloudtrail",
+          "record": {
+            "eventVersion": "1.09",
+            "eventTime": "2026-10-17T03:01:30Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "DeleteSnapshot",
+            "awsRegion": "eu-west-1",
+            "sourceIPAddress": "192.0.2.50",
+            "userAgent": "aws-sdk-go-v2/1.30.3",
+            "userIdentity": {
+              "type": "AssumedRole",
+              "principalId": "AROA492A7683XXEXAMPLE:x",
+              "arn": "arn:aws:sts::111122223333:assumed-role/AWSReservedSSO_Engineer_5f1c/x",
+              "accountId": "111122223333",
+              "accessKeyId": "ASIA28D94D21XEXAMPLE",
+              "sessionContext": {
+                "sessionIssuer": {
+                  "type": "Role",
+                  "principalId": "AROA492A7683XXEXAMPLE",
+                  "arn": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+                  "accountId": "111122223333",
+                  "userName": "AWSReservedSSO_Engineer_5f1c"
+                },
+                "attributes": {
+                  "creationDate": "2026-10-17T02:56:30Z",
+                  "mfaAuthenticated": "false"
+                }
+              }
+            },
+            "requestParameters": {
+              "snapshotId": "snap-03"
+            },
+            "responseElements": null,
+            "readOnly": false,
+            "requestID": "F1F60E222063AB7E",
+            "eventID": "7a655322-ad99-4621-8d97-b320ad962000",
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "111122223333",
+            "eventCategory": "Management",
+            "tlsDetails": {
+              "tlsVersion": "TLSv1.3",
+              "cipherSuite": "TLS_AES_128_GCM_SHA256",
+              "clientProvidedHostHeader": "ec2.eu-west-1.amazonaws.com"
+            },
+            "enrichment": {
+              "principal": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c",
+              "subject_user": "arn:aws:iam::111122223333:role/AWSReservedSSO_Engineer_5f1c"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

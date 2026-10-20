@@ -1,0 +1,254 @@
+{
+  "detection": "FD-008",
+  "cases": [
+    {
+      "name": "ScreenConnect to an unknown relay",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-14T07:44:00.000Z",
+          "source": "edr",
+          "record": {
+            "time": 1791963840000,
+            "class_uid": 1007,
+            "class_name": "Process Activity",
+            "category_uid": 1,
+            "category_name": "System Activity",
+            "activity_id": 1,
+            "activity_name": "Launch",
+            "type_uid": 100701,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "EDR sensor",
+                "vendor_name": "Example EDR"
+              },
+              "uid": "edr-4df991e6",
+              "logged_time": 1791963844000
+            },
+            "device": {
+              "hostname": "LT-4100",
+              "type_id": 3,
+              "os": {
+                "name": "Windows 11",
+                "type_id": 100
+              }
+            },
+            "actor": {
+              "user": {
+                "name": "j.devries",
+                "domain": "HARBOURLINE"
+              },
+              "process": {
+                "name": "services.exe",
+                "pid": 4000,
+                "file": {
+                  "name": "services.exe",
+                  "path": "C:\\Windows\\System32\\services.exe"
+                }
+              }
+            },
+            "process": {
+              "name": "ScreenConnect.ClientService.exe",
+              "pid": 4840,
+              "cmd_line": "\"ScreenConnect.ClientService.exe\" \"?e=Access&y=Guest&h=relay.ratecon-docs.example&p=8041&s=1\"",
+              "file": {
+                "name": "ScreenConnect.ClientService.exe",
+                "path": "C:\\Program Files (x86)\\ScreenConnect Client (e93f0a)\\ScreenConnect.ClientService.exe",
+                "signature": {
+                  "algorithm_id": 3,
+                  "certificate": {
+                    "subject": "Microsoft Corporation",
+                    "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+                    "serial_number": "562e0e51"
+                  }
+                }
+              },
+              "parent_process": {
+                "name": "services.exe",
+                "pid": 4000,
+                "file": {
+                  "name": "services.exe",
+                  "path": "C:\\Windows\\System32\\services.exe"
+                }
+              }
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "host": "LT-4100"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ScreenConnect to the IT relay",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-14T07:44:00.000Z",
+          "source": "edr",
+          "record": {
+            "time": 1791963840000,
+            "class_uid": 1007,
+            "class_name": "Process Activity",
+            "category_uid": 1,
+            "category_name": "System Activity",
+            "activity_id": 1,
+            "activity_name": "Launch",
+            "type_uid": 100701,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "EDR sensor",
+                "vendor_name": "Example EDR"
+              },
+              "uid": "edr-4df991e6",
+              "logged_time": 1791963844000
+            },
+            "device": {
+              "hostname": "LT-4100",
+              "type_id": 3,
+              "os": {
+                "name": "Windows 11",
+                "type_id": 100
+              }
+            },
+            "actor": {
+              "user": {
+                "name": "j.devries",
+                "domain": "HARBOURLINE"
+              },
+              "process": {
+                "name": "services.exe",
+                "pid": 4000,
+                "file": {
+                  "name": "services.exe",
+                  "path": "C:\\Windows\\System32\\services.exe"
+                }
+              }
+            },
+            "process": {
+              "name": "ScreenConnect.ClientService.exe",
+              "pid": 4840,
+              "cmd_line": "\"ScreenConnect.ClientService.exe\" \"?e=Access&y=Guest&h=support.harbourline.example&p=8041&s=1\"",
+              "file": {
+                "name": "ScreenConnect.ClientService.exe",
+                "path": "C:\\Program Files (x86)\\ScreenConnect Client (e93f0a)\\ScreenConnect.ClientService.exe",
+                "signature": {
+                  "algorithm_id": 3,
+                  "certificate": {
+                    "subject": "Microsoft Corporation",
+                    "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+                    "serial_number": "562e0e51"
+                  }
+                }
+              },
+              "parent_process": {
+                "name": "services.exe",
+                "pid": 4000,
+                "file": {
+                  "name": "services.exe",
+                  "path": "C:\\Windows\\System32\\services.exe"
+                }
+              }
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "host": "LT-4100"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Excel start",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-14T08:00:00.000Z",
+          "source": "edr",
+          "record": {
+            "time": 1791964800000,
+            "class_uid": 1007,
+            "class_name": "Process Activity",
+            "category_uid": 1,
+            "category_name": "System Activity",
+            "activity_id": 1,
+            "activity_name": "Launch",
+            "type_uid": 100701,
+            "severity_id": 1,
+            "status_id": 1,
+            "metadata": {
+              "version": "1.9.0",
+              "product": {
+                "name": "EDR sensor",
+                "vendor_name": "Example EDR"
+              },
+              "uid": "edr-94f08e5c",
+              "logged_time": 1791964804000
+            },
+            "device": {
+              "hostname": "LT-4100",
+              "type_id": 3,
+              "os": {
+                "name": "Windows 11",
+                "type_id": 100
+              }
+            },
+            "actor": {
+              "user": {
+                "name": "j.devries",
+                "domain": "HARBOURLINE"
+              },
+              "process": {
+                "name": "explorer.exe",
+                "pid": 4000,
+                "file": {
+                  "name": "explorer.exe",
+                  "path": "C:\\Windows\\explorer.exe"
+                }
+              }
+            },
+            "process": {
+              "name": "EXCEL.EXE",
+              "pid": 5800,
+              "cmd_line": "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE\"",
+              "file": {
+                "name": "EXCEL.EXE",
+                "path": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE",
+                "signature": {
+                  "algorithm_id": 3,
+                  "certificate": {
+                    "subject": "Microsoft Corporation",
+                    "issuer": "DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1",
+                    "serial_number": "562e0e51"
+                  }
+                }
+              },
+              "parent_process": {
+                "name": "explorer.exe",
+                "pid": 4000,
+                "file": {
+                  "name": "explorer.exe",
+                  "path": "C:\\Windows\\explorer.exe"
+                }
+              }
+            },
+            "enrichment": {
+              "subject_user": "j.devries@harbourline.example",
+              "host": "LT-4100"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

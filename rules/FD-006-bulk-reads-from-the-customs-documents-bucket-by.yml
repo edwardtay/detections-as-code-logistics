@@ -1,0 +1,41 @@
+# FD-006: Bulk reads from the customs documents bucket by a new principal
+# ATT&CK T1530 | source: AWS CloudTrail (S3 data events) | severity: high | owner: cloud-detections | schedule: every 15 min
+title: GetObject on the customs documents bucket by a principal outside the reader baseline
+id: 6dd98dbe-8ab0-51c6-b404-4b760cf3c6f5
+name: s3_customs_docs_read_new_principal
+status: test
+description: Base rule for FD-006. Needs S3 data events on the bucket, which CloudTrail does not record by default.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.collection
+  - attack.t1530
+logsource:
+  product: aws
+  service: cloudtrail
+detection:
+  selection:
+    eventSource: s3.amazonaws.com
+    eventName: GetObject
+    requestParameters.bucketName: harbourline-customs-docs
+  filter_known_reader:
+    # principal read this bucket in the last 30 days (baseline lookup)
+    enrichment.known_bucket_reader: true
+  condition: selection and not filter_known_reader
+falsepositives:
+  - A new service that reads documents before it enters the baseline
+level: low
+---
+title: Fifty or more document reads by one new principal in 15 minutes
+id: 9af9ec4c-61d4-5a3a-b608-d3f5ebd6cff5
+status: test
+correlation:
+  type: event_count
+  rules:
+    - s3_customs_docs_read_new_principal
+  group-by:
+    - enrichment.principal
+  timespan: 15m
+  condition:
+    gte: 50
+level: high

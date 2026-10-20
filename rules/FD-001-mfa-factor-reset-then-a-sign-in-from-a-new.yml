@@ -1,0 +1,68 @@
+# FD-001: MFA factor reset, then a sign-in from a new device
+# ATT&CK T1556.006 | source: Okta System Log | severity: high | owner: identity-detections | schedule: every 5 min
+title: Okta MFA factors reset or removed for a user
+id: 6a5c524c-03a0-5daf-8853-98fe64f5bc01
+name: okta_mfa_factor_reset
+status: test
+description: Base rule for FD-001. An admin reset a user's factors, or the user removed one. Does not alert on its own.
+author: Edward Tay
+date: 2026-10-20
+tags:
+  - attack.persistence
+  - attack.t1556.006
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType:
+      - user.mfa.factor.reset_all
+      - user.mfa.factor.deactivate
+  filter_verified_ticket:
+    # helpdesk ticket with a verified caller for this user in the 4 hours before (ITSM lookup)
+    enrichment.verified_ticket: true
+  # Tuning option: drop self-service removals made from a network the user already uses.
+  # filter_self_service_known_network:
+  #   enrichment.self_service: true
+  #   enrichment.asn_new_for_user: false
+  condition: selection and not 1 of filter_*
+falsepositives:
+  - Helpdesk resets for a lost phone; joined to the ticket
+level: medium
+---
+title: Okta sign-in from a device new to the user
+id: 84fc20fe-60ec-5248-ab8d-abccd28e8ca9
+name: okta_session_new_device
+status: test
+description: Base rule for FD-001.
+author: Edward Tay
+date: 2026-10-20
+logsource:
+  product: okta
+  service: okta
+detection:
+  selection:
+    eventType: user.session.start
+    outcome.result: SUCCESS
+    enrichment.device_new_for_user: true
+  condition: selection
+falsepositives:
+  - New or replacement phones and laptops
+tags:
+  - attack.initial-access
+  - attack.t1078.004
+level: low
+---
+title: MFA factors reset, then a sign-in from a new device within an hour
+id: cebc7ee9-0da9-56bc-92c5-59d11c09b4bb
+status: test
+correlation:
+  type: temporal_ordered
+  rules:
+    - okta_mfa_factor_reset
+    - okta_session_new_device
+  group-by:
+    - enrichment.subject_user
+  timespan: 1h
+  generate: false
+level: high

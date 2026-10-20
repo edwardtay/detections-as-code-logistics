@@ -1,0 +1,809 @@
+{
+  "detection": "FD-001",
+  "cases": [
+    {
+      "name": "admin reset, then new device sign-in 6 min later",
+      "expect": "alert",
+      "events": [
+        {
+          "id": "t0-0",
+          "ts": "2026-10-15T08:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-50424103-c4e9",
+            "published": "2026-10-15T08:31:00.000Z",
+            "eventType": "user.mfa.factor.reset_all",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Reset all factors for user",
+            "actor": {
+              "id": "00u8790024ax1",
+              "type": "User",
+              "alternateId": "p.smit@harbourline.example",
+              "displayName": "Paul Smit",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10292edaa34"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req2faac7dd",
+                "requestUri": "/api/v1/users/{id}/lifecycle/reset_factors",
+                "deviceFingerprint": "dfp-4d29c4f1",
+                "threatSuspected": "false",
+                "url": "/api/v1/users/{id}/lifecycle/reset_factors"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txad36ad9a",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": [
+              {
+                "id": "00ub28e0f97x1",
+                "type": "User",
+                "alternateId": "m.jansen@harbourline.example",
+                "displayName": "Maaike Jansen",
+                "detailEntry": null
+              }
+            ],
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "self_service": false,
+              "verified_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t0-1",
+          "ts": "2026-10-15T08:37:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-9c0c5c7a-8d23",
+            "published": "2026-10-15T08:37:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00ub28e0f97x1",
+              "type": "User",
+              "alternateId": "m.jansen@harbourline.example",
+              "displayName": "Maaike Jansen",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "203.0.113.66",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Romania",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "102f521eb24"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64510,
+              "asOrg": "VPS hosting provider",
+              "isp": "VPS hosting provider",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqf2e44eff",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-new",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx35973ef",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "203.0.113.66",
+                  "geographicalContext": {
+                    "country": "Romania"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": true,
+              "device_new_for_user": true,
+              "it_device_ticket": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "reset with a verified helpdesk ticket",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t1-0",
+          "ts": "2026-10-13T09:12:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-515c8a39-66d8",
+            "published": "2026-10-13T09:12:00.000Z",
+            "eventType": "user.mfa.factor.reset_all",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Reset all factors for user",
+            "actor": {
+              "id": "00u8790024ax1",
+              "type": "User",
+              "alternateId": "p.smit@harbourline.example",
+              "displayName": "Paul Smit",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "1028f1ede7"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req2e85013f",
+                "requestUri": "/api/v1/users/{id}/lifecycle/reset_factors",
+                "deviceFingerprint": "dfp-4d29c4f1",
+                "threatSuspected": "false",
+                "url": "/api/v1/users/{id}/lifecycle/reset_factors"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txd8b5adb4",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": [
+              {
+                "id": "00u86425288x1",
+                "type": "User",
+                "alternateId": "s.visser@harbourline.example",
+                "displayName": "Sem Visser",
+                "detailEntry": null
+              }
+            ],
+            "enrichment": {
+              "subject_user": "s.visser@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "self_service": false,
+              "verified_ticket": true
+            }
+          }
+        },
+        {
+          "id": "t1-1",
+          "ts": "2026-10-13T09:25:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-11813548-76b3",
+            "published": "2026-10-13T09:25:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00u86425288x1",
+              "type": "User",
+              "alternateId": "s.visser@harbourline.example",
+              "displayName": "Sem Visser",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "1022f8e2531"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req48f779ba",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-new",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx995b0a69",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "s.visser@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "it_device_ticket": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "reset, new device sign-in 2 h later",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t2-0",
+          "ts": "2026-10-15T08:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-50424103-c4e9",
+            "published": "2026-10-15T08:31:00.000Z",
+            "eventType": "user.mfa.factor.reset_all",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Reset all factors for user",
+            "actor": {
+              "id": "00u8790024ax1",
+              "type": "User",
+              "alternateId": "p.smit@harbourline.example",
+              "displayName": "Paul Smit",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10292edaa34"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req2faac7dd",
+                "requestUri": "/api/v1/users/{id}/lifecycle/reset_factors",
+                "deviceFingerprint": "dfp-4d29c4f1",
+                "threatSuspected": "false",
+                "url": "/api/v1/users/{id}/lifecycle/reset_factors"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txad36ad9a",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": [
+              {
+                "id": "00ub28e0f97x1",
+                "type": "User",
+                "alternateId": "m.jansen@harbourline.example",
+                "displayName": "Maaike Jansen",
+                "detailEntry": null
+              }
+            ],
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "self_service": false,
+              "verified_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t2-1",
+          "ts": "2026-10-15T10:40:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-abea5b02-f197",
+            "published": "2026-10-15T10:40:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00ub28e0f97x1",
+              "type": "User",
+              "alternateId": "m.jansen@harbourline.example",
+              "displayName": "Maaike Jansen",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10263b0ae7"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqb0725d73",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-new",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txbdff3543",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "it_device_ticket": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "reset, sign-in from the known device",
+      "expect": "none",
+      "events": [
+        {
+          "id": "t3-0",
+          "ts": "2026-10-15T08:31:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-50424103-c4e9",
+            "published": "2026-10-15T08:31:00.000Z",
+            "eventType": "user.mfa.factor.reset_all",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "Reset all factors for user",
+            "actor": {
+              "id": "00u8790024ax1",
+              "type": "User",
+              "alternateId": "p.smit@harbourline.example",
+              "displayName": "Paul Smit",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10292edaa34"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "req2faac7dd",
+                "requestUri": "/api/v1/users/{id}/lifecycle/reset_factors",
+                "deviceFingerprint": "dfp-4d29c4f1",
+                "threatSuspected": "false",
+                "url": "/api/v1/users/{id}/lifecycle/reset_factors"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "txad36ad9a",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": [
+              {
+                "id": "00ub28e0f97x1",
+                "type": "User",
+                "alternateId": "m.jansen@harbourline.example",
+                "displayName": "Maaike Jansen",
+                "detailEntry": null
+              }
+            ],
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": true,
+              "self_service": false,
+              "verified_ticket": false
+            }
+          }
+        },
+        {
+          "id": "t3-1",
+          "ts": "2026-10-15T08:40:00.000Z",
+          "source": "okta",
+          "record": {
+            "uuid": "okta-c00f63e2-54f0",
+            "published": "2026-10-15T08:40:00.000Z",
+            "eventType": "user.session.start",
+            "version": "0",
+            "severity": "INFO",
+            "legacyEventType": null,
+            "displayMessage": "User login to Okta",
+            "actor": {
+              "id": "00ub28e0f97x1",
+              "type": "User",
+              "alternateId": "m.jansen@harbourline.example",
+              "displayName": "Maaike Jansen",
+              "detailEntry": null
+            },
+            "client": {
+              "userAgent": {
+                "rawUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+                "os": "Windows 10",
+                "browser": "CHROME"
+              },
+              "zone": "null",
+              "device": "Computer",
+              "id": null,
+              "ipAddress": "192.0.2.10",
+              "geographicalContext": {
+                "city": null,
+                "state": null,
+                "country": "Netherlands",
+                "postalCode": null,
+                "geolocation": null
+              }
+            },
+            "device": null,
+            "authenticationContext": {
+              "authenticationProvider": null,
+              "credentialProvider": null,
+              "credentialType": null,
+              "issuer": null,
+              "interface": null,
+              "authenticationStep": 0,
+              "externalSessionId": "10263b0ae7"
+            },
+            "outcome": {
+              "result": "SUCCESS",
+              "reason": null
+            },
+            "securityContext": {
+              "asNumber": 64500,
+              "asOrg": "Harbourline office Amsterdam",
+              "isp": "Harbourline office Amsterdam",
+              "domain": null,
+              "isProxy": false
+            },
+            "debugContext": {
+              "debugData": {
+                "requestId": "reqa65f173b",
+                "requestUri": "/idp/idx/identify",
+                "deviceFingerprint": "dfp-f40d98f6",
+                "threatSuspected": "false",
+                "url": "/idp/idx/identify"
+              }
+            },
+            "transaction": {
+              "type": "WEB",
+              "id": "tx5e96b1db",
+              "detail": {}
+            },
+            "request": {
+              "ipChain": [
+                {
+                  "ip": "192.0.2.10",
+                  "geographicalContext": {
+                    "country": "Netherlands"
+                  },
+                  "version": "V4",
+                  "source": null
+                }
+              ]
+            },
+            "target": null,
+            "enrichment": {
+              "subject_user": "m.jansen@harbourline.example",
+              "asn_new_for_user": false,
+              "device_new_for_user": false,
+              "it_device_ticket": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
